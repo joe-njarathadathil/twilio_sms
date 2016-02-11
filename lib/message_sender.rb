@@ -1,6 +1,6 @@
-class MessageSender
-  def self.send_message(message)
-    new.send_message(message)
+class MessageSender 
+  def self.send_message(message, phone_number)
+    new.send_message(message,phone_number)
   end
 
   def initialize
@@ -11,15 +11,14 @@ class MessageSender
     @client = Twilio::REST::Client.new(account_sid, auth_token)
   end
 
-  def send_message(message)
+  def send_message(message, phone_number)
     @client.account.messages.create(
       from:  '+18474969267',
-      to:    '+12246375302',
+      to:    phone_number,#'+12246375302',
       body:  message
     )
   end
 
   private
-
 
 end
