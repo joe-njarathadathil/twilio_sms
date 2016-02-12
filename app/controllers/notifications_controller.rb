@@ -15,8 +15,8 @@ class NotificationsController < ApplicationController
   private
 
   def message
-    "This is a message from #{params[:name]}" \
-    ": #{params[:message]}"
+    # "This is a message from #{params[:name]}" \
+    "#{params[:message]}"
   end
 
 end
